@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.firstapp.config.domain.product.ProductDao">
+<mapper namespace="site.metacoding.firstapp.domain.product.ProductDao">
 
     <select id="findAll" resultType="site.metacoding.firstapp.domain.product.Product">
         select * from product order by product_id=#{productId}
@@ -10,7 +10,7 @@
     <select id="findById" resultType="site.metacoding.firstapp.domain.product.Product">
         select * from product where product_id = #{productId}
     </select>
-    <insert id="insert">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="productId">
         insert into product(product_name, product_price, product_qty, create_at) 
         VALUES (#{productName}, #{productPrice}, #{productQTY}, now());
     </insert>

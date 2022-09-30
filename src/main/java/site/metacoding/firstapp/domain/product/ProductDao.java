@@ -3,13 +3,13 @@ package site.metacoding.firstapp.domain.product;
 import java.util.List;
 
 public interface ProductDao {
-    Product findById(Integer id);
+    public Product findById(Integer id);
 
-    List<Product> findAll();
+    public List<Product> findAll();
 
-    void insert(Product product);
+    public void insert(Product product);
 
-    void update(Integer id, Product product);
+    public void update(Integer id, Product product);
 
-    void delete(Integer id);
+    public void delete(Integer id);
 }
