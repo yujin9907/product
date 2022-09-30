@@ -17,6 +17,9 @@ public class Product {
     private Timestamp createdAt;
 
     public Product(String string, int i, int j) {
+        this.productName = string;
+        this.productPrice = i;
+        this.productQTY = j;
     }
 
     // 여기 왜 프라이빗을 붙이는 거임?
@@ -24,6 +27,16 @@ public class Product {
     // 테스트 코드에서 실행하기 위해 만들었는데
     // no를 쓰면 개발자도 호출 가능하므로 private
     private Product() {
+    }
+
+    public void update(Product product) {
+        this.productName = product.getProductName();
+        this.productPrice = product.getProductPrice();
+        this.productQTY = product.getProductQTY();
+    }
+
+    public void setProductId(Integer id) {
+        this.productId = id;
     }
 
 }
